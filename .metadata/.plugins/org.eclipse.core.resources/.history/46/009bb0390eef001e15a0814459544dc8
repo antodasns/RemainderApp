@@ -1,0 +1,16 @@
+package com.service.app.remainder.notificationproxy;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.service.app.remainder.entity.Remainder;
+
+//@FeignClient(name="notification",url="http://localhost:8002/notification/api")
+@FeignClient(name="notification")
+//@FeignClient(name="notification",url="${NOTIFICATION_URL}")
+public interface NoficationProxy {
+	
+	@PostMapping("/saveNotification")
+	public void saveNotification(Remainder rem);
+
+}

@@ -1,0 +1,56 @@
+version: "3.3"
+services: 
+  naming-server:
+    image: antodasns/remainderapp-naming-server:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8761:8761"
+    networks:
+      - remainder-app
+  mysqldb: 
+    container_name: mysqldb
+    image: mysql
+    ports: 
+     - 3306:3306   
+    environment:
+      MYSQL_DATABASE: remainder
+      MYSQL_ROOT_PASSWORD: password
+    depends_on:
+      - naming-server
+    networks:
+      - remainder-app
+  remainder-service:
+    image: antodasns/remainderapp-remainder:0.0.1-SNAPSHOT
+    build: .
+    ports:
+      - "8001:8001"
+    environment:
+      MYSQL_HOST: mysqldb
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+      MYSQL_PORT: 3306
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
+    networks:
+      - remainder-app
+    depends_on:
+      - naming-server
+      - mysqldb
+  notification-service:
+    image: antodasns/remainderapp-notification:0.0.1-SNAPSHOT
+    build: .
+    ports:
+      - "8002:8002"
+    environment:
+      MYSQL_HOST: mysqldb
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+      MYSQL_PORT: 3306
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
+    networks:
+      - remainder-app
+    depends_on:
+      - naming-server
+      - mysqldb
+networks:
+  remainder-app:
+        

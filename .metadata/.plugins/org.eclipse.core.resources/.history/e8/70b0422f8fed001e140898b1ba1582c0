@@ -1,0 +1,13 @@
+package com.service.app.notification.remainderproxy;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+@FeignClient(name="remainder",url="http://localhost:8080/remainder/api")
+public interface RemainderProxy {
+	
+	@GetMapping("/updateRemainder/{remId}")
+	public void saveNotification(@PathVariable("remId") String remId);
+
+}
