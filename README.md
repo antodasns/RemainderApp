@@ -10,8 +10,8 @@ The project aims to implement a **microservices architecture** leveraging **Dock
     Eureka naming server
     MYSQL DB
 
-# Docker URLs
+# Docker Images
 
-Naming Server: antodasns/remainderapp-naming-server:0.0.1-SNAPSHOT
-Remainder Service: antodasns/remainderapp-remainder:0.0.1-SNAPSHOT
-Notification Service: antodasns/remainderapp-notification:0.0.1-SNAPSHOT
+*Naming Server:* antodasns/remainderapp-naming-server:0.0.1-SNAPSHOT <br>
+*Remainder Service:* antodasns/remainderapp-remainder:0.0.1-SNAPSHOT <br>
+*Notification Service:* antodasns/remainderapp-notification:0.0.1-SNAPSHOT 
