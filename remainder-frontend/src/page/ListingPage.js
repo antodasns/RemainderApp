@@ -34,7 +34,7 @@ function ListingPage() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:8001/remainderservice/api/getRemainder'); // Replace   '/api/getItems' with your actual endpoint
+      const response = await axios.get('http://localhost:8001/remainderservice/api/getRemainder'); // Replace '/api/getItems' with your actual endpoint
       setItems(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
