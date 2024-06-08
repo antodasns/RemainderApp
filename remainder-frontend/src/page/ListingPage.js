@@ -28,13 +28,13 @@ function ListingPage() {
   const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
-    fetchData(); // Fetch data when component mounts
+    fetchData(); // Fetch data when component mounts    
   }, []); 
 
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:8001/remainderservice/api/getRemainder'); // Replace '/api/getItems' with your actual endpoint
+      const response = await axios.get('http://localhost:8001/remainderservice/api/getRemainder'); // Replace   '/api/getItems' with your actual endpoint
       setItems(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
