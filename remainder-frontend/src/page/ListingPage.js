@@ -46,7 +46,7 @@ function ListingPage() {
   };
 
   const onItemClick = (item) => {
-    // Handle click logic here,e.g., navigate to item details page
+    // Handle click logic here,e.g., navigate to item details page  
     console.log('Clicked item:', item);
   };
 
