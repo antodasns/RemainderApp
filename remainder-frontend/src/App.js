@@ -3,7 +3,7 @@ import './App.css';
 import Form from './page/Form';
 import ListingPage from './page/ListingPage';
 
-function App() {
+function App() {  
   return (
     <div className="App">
    <ListingPage/>

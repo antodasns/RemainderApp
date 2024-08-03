@@ -15,7 +15,7 @@ function Form({ onClose }) {
       ...formData,
       [name]: value
     });
-  };
+  };   
    
   const handleSave = async () => {
     try {
