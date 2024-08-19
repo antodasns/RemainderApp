@@ -19,7 +19,7 @@ function Form({ onClose }) {
    
   const handleSave = async () => {
     try {
-      console.log("abc");
+      console.log("demo");
       const response = await axios.post('http://localhost:8001/remainderservice/api/saveRemainder', formData);
       console.log('Form data saved successfully:', response.data);
       // Reset form fields 
